@@ -52,7 +52,6 @@ void agregarContacto(ListaContactos *lista, Contacto *contacto) {
             aux->sig=contacto;
             lista->cantidad++;
         }
-
     }
 }
 
