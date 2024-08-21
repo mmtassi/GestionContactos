@@ -43,6 +43,7 @@ void agregarContacto(ListaContactos *lista, Contacto *contacto) {
         }else if(aux->nombre[0] > nombre[0]) {
             contacto->sig=lista->cab;
             lista->cab=contacto;
+            lista->cantidad++;
         }else{
             while(aux->sig != NULL && aux->sig->nombre[0] < nombre[0]) {
                 aux=aux->sig;
