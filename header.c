@@ -55,6 +55,36 @@ void agregarContacto(ListaContactos *lista, Contacto *contacto) {
     }
 }
 
+Contacto *buscarContacto(ListaContactos *lista, char *contacto) {
+    Contacto* aux=lista->cab;
+    //if(contacto[0] >96) {
+    //    contacto[0]=contacto[0] - 32;
+    //}
+    while (aux != NULL) {
+        if(strcmp(aux->nombre,contacto) == 0) {
+            return aux;
+        }
+        aux=aux->sig;
+    }
+    return NULL;
+}
+
+void imprimirContacto(ListaContactos *lista, char *contacto) {
+    Contacto* aux=buscarContacto(lista,contacto);
+    //if(contacto[0] > 96) {
+    //    contacto[0]=contacto[0] - 32;
+    //}
+    while (aux != NULL) {
+        if(strcmp(aux->nombre,contacto) == 0) {
+            printf("Nombre: %s\nEdad: %i\nTelefono: %s",aux->nombre,aux->edad,aux->numero);
+            return;
+        }
+        aux=aux->sig;
+    }
+    printf("El contacto no existe");
+}
+
+
 
 void imprimir(ListaContactos *lista) {
     Contacto* aux=lista->cab;

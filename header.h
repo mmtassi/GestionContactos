@@ -16,6 +16,8 @@ typedef struct lista {
 Contacto* newContacto(char *nombre, char *numero, int edad);
 ListaContactos* newLista();
 void agregarContacto(ListaContactos* lista, Contacto* contacto);
+Contacto* buscarContacto(ListaContactos* lista, char* contacto);
+void imprimirContacto(ListaContactos* lista, char *contacto);
 void imprimir(ListaContactos* lista);
 
 #endif //HEADER_H
